@@ -2,16 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import styles from './Statistics.module.css';
+import randomColor from './RandomColor';
 
 const Statistics = ({ title = '', stats }) => {
-  function randomColor() {
-    return `rgb(
-    ${Math.floor(Math.random() * 256)},
-    ${Math.floor(Math.random() * 256)}, 
-    ${Math.floor(Math.random() * 256)})
-    `;
-  }
-
+  
   return (
     <section className={styles.statistics}>
       {title && <h2 className={styles.title}>{title}</h2>}
@@ -32,9 +26,9 @@ const Statistics = ({ title = '', stats }) => {
   );
 };
 
-Statistics.defaultProps = {
-  title: '',
-};
+// Statistics.defaultProps = {
+//   title: '',
+// };
 
 Statistics.propTypes = {
   title: PropTypes.string,
